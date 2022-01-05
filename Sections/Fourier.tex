@@ -76,6 +76,18 @@ Die Diskrete Fourier Transformation ist die Grundlage für viele digitale Proces
 
 
 \subsection{Amplituden- und Phasendichte}
-\todo{
-	\includegraphics[width=\columnwidth]{Images/screenshot001}
-}
+\textbf{Beispiel:} $f(t) = \sin(-3t)\cos^2(2t) = -\sin(3t)\cos^2(2t)$. Daraus entsteht
+\begin{align*}
+	\sin(3t) =& \frac{1}{2j}\left(e^{3jt} - e^{-3jt}\right) \qquad \cos(2t) = \frac{1}{2}\left(e^{2jt} + e^{-2jt}\right) \\ \\
+	f(t) =& -\sin(3t)\cos^2(2t) \\
+	=&-\frac{1}{2j}\left(e^{3jt} - e^{-3jt}\right)\cdot \left[\frac{1}{2}\left(e^{2jt} + e^{-2jt}\right)\right]^2\\
+	=&-\frac{1}{2j}\left(e^{3jt} - e^{-3jt}\right)\cdot \left[\frac{1}{4}\left(e^{4jt} + e^{-4jt}\right)\right]\\
+	=& \frac{j}{8}(e^{7jt}\cdot1(t)-e^{-7jt}\cdot1(t)-e^{jt}\cdot1(t)\\
+	&-e^{-jt}\cdot1(t)+2e^{3jt}\cdot1(t)-2e^{-3jt}\cdot1(t))
+\end{align*}
+Mit $1(t) \transform 2\pi\delta(\omega)$ und dem Verschiebungssatz ergeben sich:
+\begin{align*}
+	F(\omega) =& \frac{2\pi}{1}\cdot\frac{j}{8}[\delta(\omega - 7)-\delta(\omega + 7) - \delta(\omega - 1)+\delta(\omega - 1)\\
+	&+2\delta(\omega - 3) -2\delta(\omega +3)]
+\end{align*}
+\includegraphics[width=\columnwidth]{Images/screenshot001}
