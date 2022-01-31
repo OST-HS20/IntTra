@@ -74,3 +74,11 @@ Summanden einzeln bewerten:
 	\item mehrfach Nullstellen: $\frac{x+1}{x^2 + 2x +1} \rightarrow \frac{A}{(x+1)}+\frac{B}{(x+1)^2}$
 	\item komplexe Nullstellen: $\frac{x+1}{x^2 + 1} \rightarrow \frac{Ax + B}{x^2 + 1}$
 \end{itemize}
+
+\subsection{Laplace-Tabelle}
+\begin{align*}
+	\delta(t) &\transform 1 &\qquad \sigma(t) &\transform \frac{1}{s}\\
+	\sigma(t)e^{-at} &\transform \frac{1}{s+a} &\qquad \sigma(t) t^n &\transform \frac{n!}{s^{n+1}} \\
+	\sigma(t)e^{-at}\sin(bt) &\transform \frac{b}{(s+a)^2 + b^2} &\qquad  &\\
+	\sigma(t)e^{-at}\cos(bt) &\transform \frac{s + a}{(s+a)^2 + b^2} &\qquad &\\
+\end{align*}
