@@ -20,22 +20,19 @@ Der Frequenzgang $H(\omega)$ bestimmt die Änderung von Amplitude und Phase des 
 		-\arccos\left(\frac{\Re(H(\omega))}{|H(\omega)|}\right) \qquad \text{für } \Im(H(\omega)) < 0
 	\end{cases*}
 \end{align*}
-\textbf{Wichtig:} Siehe auch Laplace Übertragungsfunktion Kapitel \ref{ü-funktion}.
 
+\textbf{Wichtig I:} Für Amlituden/-Phasendiagramme siehe Kapitel \ref{amp_diagram}
 
-\noindent\textbf{Beispiel $\mathbb{C}$:} Frequenzgang von DGL $\ddot{u}(t) + \dot{u}(t) + u(t) = \sin(2t)$\\
-\begin{align*}
-	u(t) &= H(\omega)\cdot e^{j\omega t} \\
-	\dot{u}(t) &= j\omega \cdot H(\omega)\cdot e^{j\omega t} \\
-	\ddot{u}(t) &= \underbrace{j^2}_{-1}\omega^2 \cdot H(\omega)\cdot e^{j\omega t} 
-\end{align*}
-In DGL einsetzen und mit $e^{j\omega t}$ kürzen:
-\begin{align*}
-		 -\omega^2H(\omega) +  j\omega \cdot H(\omega)+H(\omega) = 1 \\
-		 H(\omega) = \frac{1}{-\omega^2 + j\omega + 1}
-\end{align*}
+\textbf{Wichtig II:} Der Frequenzgang $H(\omega)$ kann auch durch die Übertragungsfunktion $G(s)$ (Siehe Kapitel \ref{ü-funktion}) mittels $H(\omega) = G(j\omega)$ oder durch Transformieren und auflösen nach $F(s)$ bzw. $F(j\omega)$ bestimmt werden. \\
 
-\noindent Mit $\sin(2t) = \frac{1}{2j}\left(e^{j2t} - e^{-j2t}\right)$ ergibt das im Komplexen ein $\omega = \pm2$ und reagiert mit $u(t) = H(\omega)\cdot\frac{1}{2j}(e^{j\omega t} - e^{-j\omega t})$. Die $\omega$ können nun in Frequenzgang $H(\omega)$ eingesetzt werden.
+\subsection{Eingang/Ausgang}
+Bei LTI-System können Ausgangssignele $y(t)$ anhander der Eingangssignale $x(t)$ berechnet werden. Durch (1) Transformation der $x(t) \transform X(\omega)$, (2) Multiplizieren mit Übertragungsfunktion $H(\omega)$ und anschliessender Rücktransformation (3) $Y(\omega) \itransform y(t)$ berechnet werden. Hinweis: Frequenzgang $H$ und Übertragungsfunktion $G$ (Laplace) können natlos konvertiert werden  $H(\omega) = G(j\omega)$ .
+\begin{center}
+	\includegraphics[width=0.5\columnwidth]{Images/eingang_ausgang}
+\end{center}
+
+\noindent\textbf{Beispiel ohne Fourier-Transformation}:\\
+\noindent Mit Eingang $x(t) = \sin(2t) = \frac{1}{2j}\left(e^{j2t} - e^{-j2t}\right)$ ergibt das eine Kreisfrequenz von $\omega = \pm2$. Den erwarteten Ausgang $y(t) = H(\omega)\cdot x(t) = \frac{1}{2j}\left(H(\omega)\cdot e^{j\omega t} - H(-\omega)e^{-j\omega t}\right)$ berechnen. Die $\omega$ können nun in Frequenzgang $H(\omega)$ eingesetzt werden.
 \[
 H(2) = \frac{-3 -2j}{13}\qquad H(-2)= \frac{-3 + 2j}{13}
 \]
@@ -46,7 +43,7 @@ Weil ein LTI-System vorliegt, können e-Funktionen einzeln mit Frequenzgang mult
 	&= -\frac{3}{13}\cdot \underbrace{\frac{1}{2j}\left(\cdot e^{2jt} - e^{-2jt} \right)}_{\sin(2t)} - \frac{2}{13}\cdot \underbrace{\frac{1}{2}\left(\cdot e^{2jt} + e^{-2jt}\right)}_{\cos(2t)}  \\
 	&= -\frac{3}{13}\sin(2t) - \frac{2}{13}\cos(2t)
 \end{align*} 
-\textbf{Hinweis:} Falls Parameter gefragt ist, Eingangssignal mit $H(\omega)$ multiplizieren und Parameter mit Ausgangssignal abgleichen.
+\textbf{Hinweis:} Falls ein Parameter gesucht, muss $y(t) = H(\omega)\cdot x(t)$ gelten. Diser kann häufig mit Koeffizietenvergleich berechnet werden.
 
 
 \subsection{Fourier Transformation}
@@ -75,7 +72,8 @@ Die Diskrete Fourier Transformation ist die Grundlage für viele digitale Proces
 \end{align*}
 
 
-\subsection{Amplituden- und Phasendichte}
+\subsection{Amplituden- und Phasendichte}\label{amp_diagram}
+Die Amplitudendichte kann durch multiplizieren von $2\pi$ und den Fourierkoeffizieten berechnet werden. Die Phasendichte ergibt sich durch den Vorfaktor (Im Beispiel $\frac{j\pi}{4}$). Da dieser rein imaginär ist, muss die Phase $\pm\frac{\pi}{2}$ sein. Das Vorzeichen erkennt man anhand des Diracstosses.
 \textbf{Beispiel:} $f(t) = \sin(-3t)\cos^2(2t) = -\sin(3t)\cos^2(2t)$. Daraus entsteht
 \begin{align*}
 	\sin(3t) =& \frac{1}{2j}\left(e^{3jt} - e^{-3jt}\right) \qquad \cos(2t) = \frac{1}{2}\left(e^{2jt} + e^{-2jt}\right) \\ \\

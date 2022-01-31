@@ -30,8 +30,11 @@
 \end{center}
 
 \subsubsection{Periodizität}
-$\cos(a+k\cdot2\pi)=\cos(a) \qquad \sin(a+k\cdot2\pi)=\sin(a) \qquad
-(k \in \mathbb{Z})$
+\begin{align*}
+	\cos(a+k\cdot2\pi)=\cos(a) &\qquad \sin(a+k\cdot2\pi)=\sin(a) \qquad
+(k \in \mathbb{Z})\\
+\sin(-a\cdot t) = -\sin(a\cdot t)&\qquad 
+\end{align*}
 
 \subsubsection{Doppel- und Halbwinkel}	
 \begin{align*}
@@ -63,3 +66,11 @@ $\cos(a+k\cdot2\pi)=\cos(a) \qquad \sin(a+k\cdot2\pi)=\sin(a) \qquad
 	\cos^2(a) &= \frac{1}{2}(1 + \cos(2a)) \\
 	\cos^3(a) &= \frac{1}{4}(3\cos(a) + \cos(3a)) \\
 \end{align*}
+
+\subsection{Partialbruchzerlegung}
+Summanden einzeln bewerten:
+\begin{itemize}[nosep]
+	\item einfachen Nullstellen: $\frac{x+1}{x^2 - 3x +2} \rightarrow \frac{A}{x-1} + \frac{B}{x-2}$
+	\item mehrfach Nullstellen: $\frac{x+1}{x^2 + 2x +1} \rightarrow \frac{A}{(x+1)}+\frac{B}{(x+1)^2}$
+	\item komplexe Nullstellen: $\frac{x+1}{x^2 + 1} \rightarrow \frac{Ax + B}{x^2 + 1}$
+\end{itemize}

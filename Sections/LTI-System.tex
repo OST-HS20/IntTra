@@ -18,7 +18,7 @@ Eine Delta-Funktion $\delta(x)$, auch Dirac-Stoss, modeliert ein unendlich Kurze
 \end{align*}
 
 \section{Faltungsprodukt}
-Mithilfe des Faltungsprodukt, oder auch Konvolution, kann zB von einem Dirac'schen Impuls die Systemantwort berechnet werden. Der Mathematische Operator $*$ wird dafür verwendet, um zwei Funktionen zu falten. Dabei wird die Funktion von links nach rechts durchgeschoben und die Fläche Summiert.
+Mithilfe des Faltungsprodukt, oder auch Konvolution, kann zB von einem Dirac'schen Impuls die Systemantwort berechnet werden. Der Mathematische Operator $*$ wird dafür verwendet, um zwei Funktionen zu falten. Dabei wird die Funktion von links nach rechts durchgeschoben und die Fläche summiert.
 \[
 y(t) = (f * g)(t) = \int\limits_{-\infty}^{\infty}f(\tau)g(t - \tau)d\tau
 \]
@@ -35,10 +35,11 @@ g(t) = \begin{cases}
 	0 & \text{sonst}
 \end{cases}
 \]
-Die Grenzen lassen sich über die Funktion und deren Grenzen bestimmen.
+Die Faltungsprodukt-Grenzen lassen sich über die Funktion und deren Grenzen bestimmen. Durch einsetzen der Funktionswerten mit entsprechendem $(\tau)$ bzw $(t-\tau)$ lässt sich ein $\tau(t)$-Diagram erstellen.
 \begin{align*}
-	f(\tau) = \tau^2 - 4 &\quad \xRightarrow[\left|t\right| \lt 2]{}& \tau \in (-2,2)\\
-	g(t-\tau)= 1 &\quad \xRightarrow[-1 \lt t \lt 0]{}& \tau\in (t, t +1)
+	f(\tau) = \tau^2 - 4 &\quad \xRightarrow[\left|t\right| \lt 2]{}& -2 \lt \tau \lt 2\\
+	g(t-\tau)= 1 &\quad \xRightarrow[-1 \lt t \lt 0]{}& -1 \lt t-\tau \lt 0\\
+	&												  & t \lt \tau \lt t +1
 \end{align*}
 \begin{center}
 	\includegraphics[width=0.4\columnwidth]{Images/faltprodukt}
